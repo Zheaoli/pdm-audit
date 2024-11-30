@@ -10,6 +10,12 @@ requires-python = ">=3.9"
 readme = "README.md"
 license = {text = "MIT"}
 
+[project.optional-dependencies]
+pytest = [
+    "pytest",
+    "pytest-mock",
+]
+
 
 [tool.pdm.scripts]
 test = "pytest"
