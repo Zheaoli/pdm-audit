@@ -1,6 +1,6 @@
 [project]
 name = "pdm-audit-plugin"
-version = "0.1.0"
+version = "0.1.2"
 description = "Default template for PDM package"
 authors = [
     {name = "Manjusaka", email = "me@manjusaka.me"},
@@ -65,6 +65,22 @@ max-complexity = 10
 known-first-party = ["pdm"]
 
 [tool.pdm]
-distribution = false
+distribution = true
+
 [project.entry-points.pdm]
-pdm-packer = "pdm_audit:register_commands"
+pdm-packer = "pdm_audit_plugin:register_commands"
+
+[project.urls]
+Repository = "https://github.com/Zheaoli/pdm-audit"
+Homepage = "https://github.com/Zheaoli/pdm-audit"
+
+
+[tool.pdm.build]
+excludes = ["./**/.git"]
+package-dir = "src"
+includes = ["src/pdm_audit_plugin"]
+source-includes = ["tests", "typings", "CHANGELOG.md", "LICENSE", "README.md", "tox.ini"]
+# editables backend doesn't work well with namespace packages
+editable-backend = "path"
+locked = true
+locked-groups = ["default", "all"]

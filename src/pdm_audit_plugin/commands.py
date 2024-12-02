@@ -66,9 +66,9 @@ class AuditCommand(BaseCommand):
         cache_ttl = int(options.cache_ttl)
         enable_cache = options.enable_cache
         format = options.format
-        service = PyPIService(project.root.joinpath("audit_cache") if enable_cache else None, cache_ttl)
+        service = PyPIService(project.root.joinpath(".audit_cache") if enable_cache else None, cache_ttl)
         if options.service == "osv":
-            service = OsvService(project.root.joinpath("audit_cache") if enable_cache else None, cache_ttl)
+            service = OsvService(project.root.joinpath(".audit_cache") if enable_cache else None, cache_ttl)
         auditor = Auditor(service, AuditOptions(False))
         source = PDMDependencySource(project)
         result = {}
