@@ -1,7 +1,7 @@
 # pdm-audit
 
 <!--- BADGES: START --->
-[![PyPI version](https://badge.fury.io/py/pdm-audit.svg)](https://pypi.org/project/pdm-audit)
+[![PyPI version](https://badge.fury.io/py/pdm-audit-plugin.svg)](https://pypi.org/project/pdm-audit-plugin)
 <!--- BADGES: END --->
 
 A PDM plugin that scans your Python project dependencies for known vulnerabilities. It leverages pip-audit to provide security auditing capabilities within your PDM workflow.
